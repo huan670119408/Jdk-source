@@ -82,7 +82,7 @@ import java.util.function.Consumer;
 
 public class LinkedList<E>
         extends AbstractSequentialList<E>
-        implements List<E>, Deque<E>, Cloneable, src.java.io.Serializable
+        implements List<E>, Deque<E>, Cloneable, java.io.Serializable
 {
     transient int size = 0;
 
@@ -1095,7 +1095,7 @@ public class LinkedList<E>
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] a) {
         if (a.length < size)
-            a = (T[]) src.java.lang.reflect.Array.newInstance(
+            a = (T[]) java.lang.reflect.Array.newInstance(
                     a.getClass().getComponentType(), size);
         int i = 0;
         Object[] result = a;
@@ -1118,8 +1118,8 @@ public class LinkedList<E>
      *             contains) is emitted (int), followed by all of its
      *             elements (each an Object) in the proper order.
      */
-    private void writeObject(src.java.io.ObjectOutputStream s)
-            throws src.java.io.IOException {
+    private void writeObject(java.io.ObjectOutputStream s)
+            throws java.io.IOException {
         // Write out any hidden serialization magic
         s.defaultWriteObject();
 
@@ -1136,8 +1136,8 @@ public class LinkedList<E>
      * (that is, deserializes it).
      */
     @SuppressWarnings("unchecked")
-    private void readObject(src.java.io.ObjectInputStream s)
-            throws src.java.io.IOException, ClassNotFoundException {
+    private void readObject(java.io.ObjectInputStream s)
+            throws java.io.IOException, ClassNotFoundException {
         // Read in any hidden serialization magic
         s.defaultReadObject();
 

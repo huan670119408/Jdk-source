@@ -25,7 +25,7 @@
 /*
  * Written by Doug Lea with assistance from members of JCP JSR-166
  * Expert Group.  Adapted and released, under explicit permission,
- * from JDK ArrayList.src.java which carries the following copyright:
+ * from JDK ArrayList.java which carries the following copyright:
  *
  * Copyright 1997 by Sun Microsystems, Inc.,
  * 901 San Antonio Road, Palo Alto, California, 94303, U.S.A.
@@ -36,13 +36,14 @@ package java.util.concurrent;
 import org.apache.tomcat.jni.Error;
 import sun.misc.SharedSecrets;
 
+import java.util.*;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 
 /**
- * A thread-safe variant of {@link src.java.util.ArrayList} in which all mutative
+ * A thread-safe variant of {@link java.util.ArrayList} in which all mutative
  * operations ({@code add}, {@code set}, and so on) are implemented by
  * making a fresh copy of the underlying array.
  *
@@ -79,7 +80,7 @@ import java.util.function.UnaryOperator;
  * @param <E> the type of elements held in this collection
  */
 public class CopyOnWriteArrayList<E>
-        implements List<E>, RandomAccess, Cloneable, src.java.io.Serializable {
+        implements List<E>, RandomAccess, Cloneable, java.io.Serializable {
     private static final long serialVersionUID = 8673264195747942595L;
 
     /** The lock protecting all mutators */
@@ -955,13 +956,13 @@ public class CopyOnWriteArrayList<E>
      * Saves this list to a stream (that is, serializes it).
      *
      * @param s the stream
-     * @throws src.java.io.IOException if an I/O error occurs
+     * @throws java.io.IOException if an I/O error occurs
      * @serialData The length of the array backing the list is emitted
      *               (int), followed by all of its elements (each an Object)
      *               in the proper order.
      */
-    private void writeObject(src.java.io.ObjectOutputStream s)
-            throws src.java.io.IOException {
+    private void writeObject(java.io.ObjectOutputStream s)
+            throws java.io.IOException {
 
         s.defaultWriteObject();
 
@@ -979,10 +980,10 @@ public class CopyOnWriteArrayList<E>
      * @param s the stream
      * @throws ClassNotFoundException if the class of a serialized object
      *         could not be found
-     * @throws src.java.io.IOException if an I/O error occurs
+     * @throws java.io.IOException if an I/O error occurs
      */
-    private void readObject(src.java.io.ObjectInputStream s)
-            throws src.java.io.IOException, ClassNotFoundException {
+    private void readObject(java.io.ObjectInputStream s)
+            throws java.io.IOException, ClassNotFoundException {
 
         s.defaultReadObject();
 

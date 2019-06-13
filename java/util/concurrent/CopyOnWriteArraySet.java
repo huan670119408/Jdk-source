@@ -44,7 +44,7 @@ import java.util.function.Predicate;
 import java.util.function.Consumer;
 
 /**
- * A {@link src.java.util.Set} that uses an internal {@link CopyOnWriteArrayList}
+ * A {@link java.util.Set} that uses an internal {@link CopyOnWriteArrayList}
  * for all of its operations.  Thus, it shares the same basic properties:
  * <ul>
  *  <li>It is best suited for applications in which set sizes generally
@@ -94,16 +94,16 @@ import java.util.function.Consumer;
  * @param <E> the type of elements held in this collection
  */
 public class CopyOnWriteArraySet<E> extends AbstractSet<E>
-        implements src.java.io.Serializable {
+        implements java.io.Serializable {
     private static final long serialVersionUID = 5457747651344034263L;
 
-    private final src.java.util.concurrent.CopyOnWriteArrayList<E> al;
+    private final java.util.concurrent.CopyOnWriteArrayList<E> al;
 
     /**
      * Creates an empty set.
      */
     public CopyOnWriteArraySet() {
-        al = new src.java.util.concurrent.CopyOnWriteArrayList<E>();
+        al = new java.util.concurrent.CopyOnWriteArrayList<E>();
     }
 
     /**
@@ -117,10 +117,10 @@ public class CopyOnWriteArraySet<E> extends AbstractSet<E>
         if (c.getClass() == CopyOnWriteArraySet.class) {
             @SuppressWarnings("unchecked") CopyOnWriteArraySet<E> cc =
                     (CopyOnWriteArraySet<E>)c;
-            al = new src.java.util.concurrent.CopyOnWriteArrayList<E>(cc.al);
+            al = new java.util.concurrent.CopyOnWriteArrayList<E>(cc.al);
         }
         else {
-            al = new src.java.util.concurrent.CopyOnWriteArrayList<E>();
+            al = new java.util.concurrent.CopyOnWriteArrayList<E>();
             al.addAllAbsent(c);
         }
     }

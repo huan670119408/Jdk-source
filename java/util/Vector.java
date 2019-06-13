@@ -85,7 +85,7 @@ import java.util.function.UnaryOperator;
  */
 public class Vector<E>
         extends AbstractList<E>
-        implements List<E>, RandomAccess, Cloneable, src.java.io.Serializable
+        implements List<E>, RandomAccess, Cloneable, java.io.Serializable
 {
     /**
      * The array buffer into which the components of the vector are
@@ -1068,7 +1068,7 @@ public class Vector<E>
      * of the fields.
      *
      * @param in the stream
-     * @throws src.java.io.IOException if an I/O error occurs
+     * @throws java.io.IOException if an I/O error occurs
      * @throws ClassNotFoundException if the stream contains data
      *         of a non-existing class
      */
@@ -1090,9 +1090,9 @@ public class Vector<E>
      * This method performs synchronization to ensure the consistency
      * of the serialized data.
      */
-    private void writeObject(src.java.io.ObjectOutputStream s)
-            throws src.java.io.IOException {
-        final src.java.io.ObjectOutputStream.PutField fields = s.putFields();
+    private void writeObject(java.io.ObjectOutputStream s)
+            throws java.io.IOException {
+        final java.io.ObjectOutputStream.PutField fields = s.putFields();
         final Object[] data;
         synchronized (this) {
             fields.put("capacityIncrement", capacityIncrement);
